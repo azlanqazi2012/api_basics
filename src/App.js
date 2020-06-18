@@ -4,13 +4,14 @@ import './App.css';
 import Parent from './Parent';
 import ValueContext from './ValueContext';
 function App() {
-  let value=78;
-  let [number,setNumber]=useState(45);
+  let value=useState(85);
+  
   return (
     <ValueContext.Provider value={value}>
     <div >
       Hello from App
 <Parent ></Parent>
+<button onClick={()=>{value[1](++value[0])}}>update</button>
     </div>
     </ValueContext.Provider>
   );
